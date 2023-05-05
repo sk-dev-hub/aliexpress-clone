@@ -3,7 +3,7 @@ const prisma = new PrismaClient()
 
 export default defineEventHandler(async (event) => {
     const body = await readBody(event)
-
+    
     const order = await prisma.orders.create({
         data: {
             userId: body.userId,
